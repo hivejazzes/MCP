@@ -208,6 +208,25 @@ def nmap_tool():
     cmd = f"nmap {p.get('scan_type','-sV')} {p.get('ports','')} {p.get('additional_args','')} {q(p.get('target'))}"
     return jsonify(execute_command(cmd))
 
+@app.route("/api/tools/nessuscli", methods=["POST"])
+def nessuscli_tool():
+    """
+    Execute nessuscli command on the Kali server.
+
+    Expected JSON body:
+    {
+        "command": "agent",
+        "args": "--status"
+    }
+    """
+    p = request.json or {}
+    base_cmd = "/opt/nessus/sbin/nessuscli"
+
+    # Befehl zusammenbauen
+    cmd = f"{base_cmd} {p.get('command','')} {p.get('args','')}"
+
+    return jsonify(execute_command(cmd))
+
 @app.route("/api/tools/gobuster", methods=["POST"])
 def gobuster_tool():
     p = request.json or {}
