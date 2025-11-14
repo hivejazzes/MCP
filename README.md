@@ -51,15 +51,19 @@ curl http://localhost:5000/health
 In **LM Studio**, create an `mcp.json` file that defines your MCP client connection:
 
 ```json
+LM-Studio
+
 {
-  "clients": [
-    {
-      "name": "Kali MCP Client",
-      "entry_point": "mcp_server.py",
-      "args": ["--server", "http://<KALI_IP>:5000"],
-      "venv": ".venv"
+  "mcpServers": {
+    "Kali-MCP": {
+      "command": "python",
+      "args": [
+        "/home/user/Downloads/MCP/mcp_server.py",
+        "--server",
+        "http://<KALI_IP>:5000"
+      ]
     }
-  ]
+  }
 }
 ```
 
