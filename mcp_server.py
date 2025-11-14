@@ -123,6 +123,29 @@ def setup_mcp_server(kali_client: KaliToolsClient) -> FastMCP:
         Configured FastMCP instance
     """
     mcp = FastMCP("kali-mcp")
+
+    @mcp.tool()
+    def nessuscli_scan(
+        command: str = "agent",
+        args: str = ""
+    ) -> Dict[str, Any]:
+        """
+        Execute NessusCLI command via backend (nessuscli binary on Kali server).
+
+        Args:
+            command: Primary NessusCLI command (e.g., 'agent', 'update', 'fix', 'lsync').
+            args: Additional arguments for nessuscli (e.g., '--register --key=<KEY>').
+
+        Returns:
+            Output from nessuscli execution.
+        """
+        data = {
+            "command": command,
+            "args": args
+        }
+        result = kali_client.safe_post("api/tools/nessuscli", data)
+        return {"result": result}
+
     
     @mcp.tool()
     def nmap_scan(target: str, scan_type: str = "-sV", ports: str = "", additional_args: str = "") -> Dict[str, Any]:
