@@ -18,8 +18,6 @@ This short HOWTO shows how to install and run two files using **LM Studio** to r
 ## 2️⃣ Setup
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 pip install flask requests fastmcp
 ```
 
