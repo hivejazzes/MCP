@@ -11,7 +11,7 @@ This short HOWTO shows how to install and run two files using **LM Studio** to r
 
 * Kali Linux or Linux host with: `nmap`, `gobuster`, `dirb`, `nikto`, `sqlmap`, `metasploit-framework`, `hydra`, `john`, `wpscan`, `enum4linux`.
 * Python 3.8+, `pip`, and network access between both components.
-* **LM Studio** installed to manage and run the MCP client via `mcp.json`.
+* **LM Studio** (https://lmstudio.ai/download) installed to manage and run the MCP client via `mcp.json`.
 
 ---
 
