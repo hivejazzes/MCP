@@ -51,7 +51,6 @@ curl http://localhost:5000/health
 In **LM Studio**, create an `mcp.json` file that defines your MCP client connection:
 
 ```json
-LM-Studio
 
 {
   "mcpServers": {
