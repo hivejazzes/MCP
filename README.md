@@ -18,7 +18,7 @@ This short HOWTO shows how to install and run two files using **LM Studio** to r
 ## 2️⃣ Setup
 
 ```bash
-pip install flask requests fastmcp
+sudo apt install python3-flask python3-requests python3-mcp
 ```
 
 Set environment variables:
